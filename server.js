@@ -4,12 +4,10 @@ const config = require('./config');
 const cors = require('cors');
 
 const weatherRouter = require('./routes/weather-router');
-
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-app.use('/api', weatherRouter);
+app.use('/', weatherRouter);
 
 const start = async () => {
   try {
